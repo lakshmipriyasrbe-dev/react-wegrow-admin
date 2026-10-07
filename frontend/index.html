@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeGrow Institutional ERP & Management Portal</title>
+  <meta name="description" content="WeGrow Skill Campus & B-School — Unified Enterprise ERP" />
+  <link rel="icon" type="image/png" href="/wegrow-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              950: '#060F26',
+              900: '#0A1B45',
+              850: '#0E2359',
+              800: '#101F52',
+              700: '#16326F',
+              600: '#204382',
+              500: '#2F5EB0',
+              400: '#4D78C9',
+              100: '#E7EAF5',
+              50: '#F3F4FA',
+            },
+            accent: {
+              700: '#B83E04',
+              650: '#C04606',
+              600: '#D9520A',
+              500: '#EA6118',
+              400: '#F0834A',
+              300: '#F5A277',
+              100: '#FCE3CF',
+              50: '#FDF0E6',
+            },
+            surface: {
+              ground: '#F4F6FB',
+              card: '#FFFFFF',
+              border: '#E2E6F0',
+              muted: '#64748B',
+              faint: '#94A3B8',
+              ink: '#0F172A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-[#F4F6FB] text-[#0F172A] antialiased">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

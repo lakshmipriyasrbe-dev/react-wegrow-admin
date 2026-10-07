@@ -1,0 +1,58 @@
+from sqlalchemy import Column, Integer, BigInteger, String, Text, DateTime, Date, Numeric, func
+from app.database.session import Base
+
+class TCEnrollment(Base):
+    __tablename__ = "tc_enrollment"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    created_date_time = Column(DateTime, default=func.now())
+    updated_date_time = Column(DateTime, default=func.now(), onupdate=func.now())
+    enrollment_id = Column(Text, nullable=True)
+    student_id = Column(Text, nullable=True, index=True)
+    student_name = Column(Text, nullable=True)
+    father_spouse_name = Column(Text, nullable=True)
+    address = Column(Text, nullable=True)
+    mobile_number = Column(Text, nullable=True)
+    parent_contact_no = Column(Text, nullable=True)
+    course_id = Column(Text, nullable=True)
+    duration = Column(Text, nullable=True)
+    from_time = Column(Text, nullable=True)
+    to_time = Column(Text, nullable=True)
+    staff_id = Column(Text, nullable=True)
+    fees_type = Column(Text, nullable=True)
+    fees_amount = Column(Numeric(12, 2), default=0.00)
+    paid_amount = Column(Numeric(12, 2), default=0.00)
+    balance_amount = Column(Numeric(12, 2), default=0.00)
+    dob = Column(Date, nullable=True)
+    doj = Column(Date, nullable=True)
+    blood_group = Column(Text, nullable=True)
+    candidate_photo = Column(Text, nullable=True)
+    deleted = Column(Integer, default=0, index=True)
+
+class TCEnrollmentInternship(Base):
+    __tablename__ = "tc_enrollment_internship"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    created_date_time = Column(DateTime, default=func.now())
+    updated_date_time = Column(DateTime, default=func.now(), onupdate=func.now())
+    enrollment_id = Column(Text, nullable=True)
+    student_id = Column(Text, nullable=True, index=True)
+    student_name = Column(Text, nullable=True)
+    father_spouse_name = Column(Text, nullable=True)
+    address = Column(Text, nullable=True)
+    mobile_number = Column(Text, nullable=True)
+    parent_contact_no = Column(Text, nullable=True)
+    course_id = Column(Text, nullable=True)
+    duration = Column(Text, nullable=True)
+    from_time = Column(Text, nullable=True)
+    to_time = Column(Text, nullable=True)
+    staff_id = Column(Text, nullable=True)
+    fees_type = Column(Text, nullable=True)
+    fees_amount = Column(Numeric(12, 2), default=0.00)
+    paid_amount = Column(Numeric(12, 2), default=0.00)
+    balance_amount = Column(Numeric(12, 2), default=0.00)
+    dob = Column(Date, nullable=True)
+    doj = Column(Date, nullable=True)
+    blood_group = Column(Text, nullable=True)
+    candidate_photo = Column(Text, nullable=True)
+    deleted = Column(Integer, default=0, index=True)

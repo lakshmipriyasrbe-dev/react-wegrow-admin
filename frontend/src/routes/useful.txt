@@ -1,0 +1,1562 @@
+============================================================
+WEGROW ERP - COMPLETE PHP/MYSQL TO REACT/FASTAPI/POSTGRESQL
+MIGRATION PROJECT
+============================================================
+
+You are responsible for migrating my existing WeGrow Skill Campus
+ERP/Admin Portal into a completely new modern application.
+
+IMPORTANT:
+
+This is a COMPLETE SYSTEM MIGRATION.
+
+Do NOT treat this as a simple PHP-to-Python conversion.
+
+You must first understand the existing application, database,
+business rules, workflows, reports, calculations, authentication,
+permissions, AJAX operations, integrations and UI.
+
+Then rebuild the application properly using:
+
+FRONTEND:
+- React
+- JavaScript
+- React Router
+- Axios
+- CSS
+- Vite ONLY as the React development/build tool
+
+BACKEND:
+- Python
+- FastAPI
+- Pydantic
+- SQLAlchemy 2.x
+- Alembic
+
+DATABASE:
+- PostgreSQL
+
+============================================================
+1. OLD APPLICATION
+============================================================
+
+The existing application is available at:
+
+http://localhost/priya/adminv1/
+
+This is the OLD application.
+
+It currently uses:
+
+- PHP
+- MySQL/MariaDB
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- AJAX
+- PHP sessions
+- PHP classes/functions
+- SQL queries
+- PDF generation
+- Excel generation
+- External APIs
+- WhatsApp integration
+- Cron functionality
+
+The old application must remain untouched.
+
+DO NOT modify the old application.
+
+DO NOT delete old files.
+
+DO NOT rename old files.
+
+DO NOT modify the old database.
+
+The old system must continue working while the new system is
+being developed.
+
+============================================================
+2. NEW APPLICATION LOCATION
+============================================================
+
+The complete new application MUST be created here:
+
+D:\React_OfficeProject\admin-portal\react-admin-portal (if it not have create in this path)
+
+Everything related to the new application must remain inside
+this folder.
+
+============================================================
+3. VERY IMPORTANT - EXISTING CREATE REACT APP
+============================================================
+
+There is an existing React project that was previously created
+using:
+
+npx create-react-app
+
+It contains files/folders such as:
+
+.git
+node_modules
+public
+src
+package.json
+package-lock.json
+README.md
+
+DO NOT use this Create React App project as the foundation of
+the new ERP.
+
+Create a NEW React frontend using Vite.
+
+Do NOT migrate the old CRA structure blindly.
+
+Do NOT continue using Create React App.
+
+Do NOT use:
+
+- Create React App
+- Next.js
+- Vue
+- Angular
+- TypeScript
+
+Use:
+
+React
+JavaScript
+React Router
+Axios
+CSS
+Vite
+
+Vite is only the development/build tool.
+
+The actual frontend application must be React.
+
+If the existing CRA project contains useful assets or code,
+inspect them and reuse only what is genuinely useful.
+
+Do not copy node_modules.
+
+Create a fresh package.json and install the required dependencies.
+
+============================================================
+4. FINAL ARCHITECTURE
+============================================================
+
+The final architecture must be:
+
+                    WEGROW ERP
+                        |
+              ---------------------
+              |                   |
+          FRONTEND             BACKEND
+              |                   |
+            React              Python
+              |                FastAPI
+              |                   |
+          React Router        Pydantic
+              |                   |
+            Axios             SQLAlchemy
+              |                   |
+              ------- REST API ----
+                                  |
+                              PostgreSQL
+                                  |
+                               Alembic
+
+The frontend and backend must be clearly separated.
+
+============================================================
+5. FINAL PROJECT STRUCTURE
+============================================================
+
+Create a clean structure similar to:
+
+D:\React_OfficeProject\admin-portal\react-admin-portal\
+
+│
+├── frontend/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── layouts/
+│   │   ├── pages/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── utils/
+│   │   ├── constants/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── public/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── core/
+│   │   ├── database/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── routers/
+│   │   ├── services/
+│   │   ├── dependencies/
+│   │   ├── middleware/
+│   │   └── utils/
+│   │
+│   ├── migrations/
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── database/
+│   ├── schema/
+│   ├── seed/
+│   └── migration/
+│
+├── docs/
+│
+├── migration_plan.md
+├── migration_checklist.md
+├── README.md
+└── .gitignore
+
+You may improve this structure when necessary, but keep frontend,
+backend and database responsibilities clearly separated.
+
+============================================================
+6. FIRST STEP - DO NOT CODE IMMEDIATELY
+============================================================
+
+Before writing the new application code:
+
+COMPLETELY ANALYZE THE OLD APPLICATION.
+
+Inspect:
+
+- PHP files
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- AJAX
+- PHP classes
+- PHP functions
+- include files
+- require files
+- common files
+- database connection files
+- authentication
+- sessions
+- roles
+- permissions
+- SQL queries
+- forms
+- validation
+- reports
+- PDF generation
+- Excel generation
+- file uploads
+- API integrations
+- WhatsApp integrations
+- cron functionality
+- configuration
+- database tables
+- relationships
+- indexes
+- foreign keys
+
+Do not make assumptions if the old code already contains the
+actual business logic.
+
+The OLD SOURCE CODE and OLD DATABASE are the source of truth.
+
+============================================================
+7. CREATE MIGRATION PLAN FIRST
+============================================================
+
+Create:
+
+migration_plan.md
+
+inside:
+
+D:\React_OfficeProject\admin-portal\react-admin-portal\
+
+Before implementing modules, document:
+
+OLD MODULE
+OLD PHP FILE
+OLD URL
+PURPOSE
+DATABASE TABLES
+SQL QUERIES
+BUSINESS LOGIC
+AJAX OPERATIONS
+VALIDATIONS
+ROLES/PERMISSIONS
+NEW REACT PAGE
+NEW FASTAPI API
+NEW POSTGRESQL TABLE
+STATUS
+
+Example:
+
+| Old File | Function | React Page | FastAPI API | Database | Status |
+|----------|----------|------------|-------------|----------|--------|
+
+Do not mark something as completed until it has actually been
+implemented and tested.
+
+============================================================
+8. CREATE MIGRATION CHECKLIST
+============================================================
+
+Create:
+
+migration_checklist.md
+
+For every module:
+
+[ ] Old files identified
+[ ] Database tables identified
+[ ] Business logic identified
+[ ] API created
+[ ] React page created
+[ ] CRUD completed
+[ ] Validation completed
+[ ] Permissions completed
+[ ] Reports completed
+[ ] Testing completed
+[ ] Old vs new result compared
+[ ] Migration verified
+
+============================================================
+9. DATABASE MIGRATION
+============================================================
+
+The old database is MySQL/MariaDB.
+
+The new database MUST be PostgreSQL.
+
+DO NOT simply copy MySQL SQL into PostgreSQL.
+
+Analyze every table.
+
+Convert properly:
+
+AUTO_INCREMENT
+→ PostgreSQL identity/sequence
+
+DATETIME
+→ TIMESTAMP
+
+TINYINT boolean patterns
+→ BOOLEAN where appropriate
+
+ENUM
+→ PostgreSQL-compatible implementation
+
+MEDIUMTEXT
+→ TEXT where appropriate
+
+DECIMAL
+→ NUMERIC/DECIMAL
+
+MySQL-specific functions must be converted properly.
+
+Inspect and convert:
+
+IFNULL
+COALESCE
+GROUP_CONCAT
+DATE_FORMAT
+CURDATE
+NOW
+INSERT IGNORE
+ON DUPLICATE KEY UPDATE
+MySQL-specific joins
+MySQL-specific syntax
+
+Preserve the original meaning.
+
+============================================================
+10. DO NOT CHANGE BUSINESS LOGIC DURING DATABASE MIGRATION
+============================================================
+
+The migration should preserve:
+
+- IDs
+- relationships
+- historical records
+- dates
+- amounts
+- statuses
+- student records
+- staff records
+- enrollment records
+- payment records
+- attendance records
+- reports
+- event records
+- feedback records
+- campaign records
+
+Do not invent new business rules.
+
+If a conversion requires a change, document it.
+
+============================================================
+11. MYSQL TO POSTGRESQL DATA MIGRATION
+============================================================
+
+Create a proper migration/import utility.
+
+It must be able to:
+
+1. Read the old MySQL database.
+2. Transform data where required.
+3. Insert into PostgreSQL.
+4. Preserve relationships.
+5. Validate record counts.
+6. Validate important totals.
+7. Report failed records.
+8. Allow the migration to be repeated safely where practical.
+
+DO NOT delete the old MySQL database.
+
+============================================================
+12. SQLALCHEMY
+============================================================
+
+Use SQLAlchemy 2.x in the FastAPI backend.
+
+Create proper models.
+
+Do not put all models into one huge file.
+
+Organize models logically.
+
+Example:
+
+models/
+    student.py
+    staff.py
+    course.py
+    enrollment.py
+    payment.py
+    attendance.py
+    feedback.py
+    event.py
+    campaign.py
+    etc.
+
+Use relationships and constraints properly.
+
+============================================================
+13. ALEMBIC
+============================================================
+
+Use Alembic for PostgreSQL schema migrations.
+
+Create migration files for:
+
+- tables
+- columns
+- indexes
+- foreign keys
+- constraints
+- required schema changes
+
+Do not manually modify the production schema without a migration.
+
+============================================================
+14. FASTAPI BACKEND
+============================================================
+
+Do NOT create one huge main.py.
+
+Use routers.
+
+Example:
+
+routers/
+    auth.py
+    dashboard.py
+    students.py
+    staff.py
+    courses.py
+    enquiries.py
+    enrollments.py
+    payments.py
+    attendance.py
+    progress.py
+    placements.py
+    feedback.py
+    events.py
+    reports.py
+    campaigns.py
+
+Only create modules that actually exist in the old system,
+but ensure ALL old functionality is eventually migrated.
+
+============================================================
+15. SERVICE LAYER
+============================================================
+
+Keep business logic out of route files where practical.
+
+Use:
+
+services/
+
+Example:
+
+student_service.py
+payment_service.py
+attendance_service.py
+enrollment_service.py
+report_service.py
+campaign_service.py
+
+etc.
+
+Routers should handle HTTP/API concerns.
+
+Services should handle business logic.
+
+Database access should be properly separated.
+
+============================================================
+16. PYDANTIC
+============================================================
+
+Use Pydantic for:
+
+- request validation
+- response schemas
+- API data validation
+- nested data validation
+- type conversion where appropriate
+
+Do not return raw database objects unnecessarily.
+
+============================================================
+17. REST API
+============================================================
+
+Create proper REST APIs.
+
+Examples:
+
+GET    /api/students
+GET    /api/students/{id}
+POST   /api/students
+PUT    /api/students/{id}
+DELETE /api/students/{id}
+
+GET    /api/courses
+POST   /api/courses
+PUT    /api/courses/{id}
+
+GET    /api/enrollments
+POST   /api/enrollments
+
+GET    /api/payments
+POST   /api/payments
+
+GET    /api/attendance
+POST   /api/attendance
+
+etc.
+
+Use proper:
+
+- HTTP methods
+- HTTP status codes
+- validation
+- error responses
+- pagination
+- filtering
+- sorting
+- searching
+
+============================================================
+18. AUTHENTICATION
+============================================================
+
+First inspect the old PHP authentication system.
+
+Understand:
+
+- login
+- logout
+- sessions
+- roles
+- permissions
+- password storage
+- user types
+- branch access
+- menu access
+
+Then implement equivalent secure authentication in FastAPI.
+
+Use secure password hashing.
+
+Use token-based authentication where appropriate.
+
+Implement:
+
+- Login API
+- Logout behaviour
+- Current user API
+- Authentication dependency
+- Role authorization
+- Permission authorization
+- Protected API routes
+- Protected React routes
+
+Never store plain-text passwords.
+
+Never return passwords through APIs.
+
+============================================================
+19. REACT FRONTEND
+============================================================
+
+Create a NEW React application using Vite.
+
+Use JavaScript, not TypeScript.
+
+Use:
+
+React
+React Router
+Axios
+CSS
+
+Create reusable components.
+
+Example:
+
+components/
+    DataTable
+    Pagination
+    SearchBar
+    Modal
+    ConfirmDialog
+    FormInput
+    Select
+    DatePicker
+    FileUpload
+    Loading
+    EmptyState
+    ErrorMessage
+    Toast
+    StatusBadge
+    PageHeader
+    DashboardCard
+
+Do not create duplicate components unnecessarily.
+
+============================================================
+20. REACT ROUTING
+============================================================
+
+Use React Router.
+
+Create route structure based on the old application.
+
+Examples:
+
+/login
+/dashboard
+/students
+/students/add
+/students/:id
+/courses
+/enrollments
+/payments
+/attendance
+/feedback
+/events
+/reports
+/campaigns
+
+Do NOT assume these are the complete routes.
+
+Inspect the old application and migrate ALL actual routes.
+
+============================================================
+21. REACT API SERVICES
+============================================================
+
+Do not put API calls randomly throughout components.
+
+Create:
+
+services/
+    api.js
+    authService.js
+    studentService.js
+    courseService.js
+    enrollmentService.js
+    paymentService.js
+    attendanceService.js
+    reportService.js
+    campaignService.js
+
+etc.
+
+Configure a central Axios instance.
+
+Backend URL must come from environment configuration.
+
+============================================================
+22. JQUERY TO REACT
+============================================================
+
+DO NOT copy jQuery code into React.
+
+Convert functionality properly.
+
+Examples:
+
+jQuery AJAX
+→ Axios
+
+document.getElementById()
+→ React state/ref
+
+onclick
+→ React event handlers
+
+show/hide
+→ conditional rendering
+
+jQuery modal
+→ React modal component
+
+DataTables
+→ React table component
+
+Select2
+→ React select component
+
+AJAX form
+→ React form + FastAPI API
+
+============================================================
+23. OLD UI TO NEW UI
+============================================================
+
+Preserve the existing workflow and functionality.
+
+Improve the UI where appropriate.
+
+Improve:
+
+- responsive layout
+- spacing
+- typography
+- tables
+- forms
+- modals
+- loading states
+- error states
+- empty states
+- mobile responsiveness
+- accessibility
+
+But DO NOT change business behaviour merely to make the UI
+different.
+
+============================================================
+24. DASHBOARD
+============================================================
+
+Analyze the existing dashboard.
+
+Do not create fake numbers.
+
+All dashboard values must come from PostgreSQL through FastAPI.
+
+Migrate all existing:
+
+- cards
+- counts
+- charts
+- statistics
+- filters
+- date ranges
+- branch filters
+- course filters
+- reports
+
+Verify the new dashboard values against the old system.
+
+============================================================
+25. STUDENT MODULE
+============================================================
+
+Migrate the complete Student module.
+
+Inspect and migrate:
+
+- Student profile
+- Student ID
+- Personal information
+- Course
+- Enrollment
+- Training
+- Internship
+- Payments
+- Installments
+- Attendance
+- Course progress
+- Feedback
+- Placement
+- Documents
+- Login
+- Reports
+
+Do not assume field names.
+
+Use the existing database and PHP code as the source of truth.
+
+============================================================
+26. COURSE MODULE
+============================================================
+
+Migrate all course functionality.
+
+Include whatever actually exists in the old system:
+
+- Course CRUD
+- Course duration
+- Fees
+- Course status
+- Course categories
+- Trainers
+- Course enquiry
+- Enrollment relationship
+- Progress
+- Placement relationship
+
+Do not invent fields.
+
+============================================================
+27. ENROLLMENT
+============================================================
+
+Migrate the complete enrollment logic.
+
+Preserve:
+
+- training duration
+- internship duration
+- course assignment
+- student assignment
+- fees
+- installments
+- dates
+- status
+- branch
+- trainer
+- progress
+
+============================================================
+28. PAYMENT MODULE
+============================================================
+
+PAYMENT LOGIC IS BUSINESS-CRITICAL.
+
+Inspect every existing payment calculation.
+
+Preserve:
+
+- total amount
+- paid amount
+- balance
+- installment amount
+- installment dates
+- payment status
+- payment history
+- receipt
+- pending amount
+- reports
+
+Do NOT simplify calculations.
+
+Create automated tests for important payment calculations.
+
+The new PostgreSQL result must match the old system.
+
+============================================================
+29. ATTENDANCE
+============================================================
+
+Migrate all attendance functionality.
+
+Preserve:
+
+- attendance marking
+- attendance dates
+- student/staff relationship
+- present
+- absent
+- leave
+- other statuses
+- attendance reports
+- summaries
+- filters
+
+Verify calculations.
+
+============================================================
+30. COURSE PROGRESS
+============================================================
+
+Migrate the existing course progress logic exactly.
+
+Do not hard-code examples.
+
+Read the existing implementation.
+
+If the existing system uses course duration to determine progress,
+migrate that actual logic.
+
+============================================================
+31. FEEDBACK
+============================================================
+
+If the existing system contains the Feedback module, migrate it
+completely.
+
+Preserve actual fields and values from the old system.
+
+Known functionality may include:
+
+Student Feedback
+Manager Feedback Review
+Feedback Type
+Priority
+Status
+Description
+Created Date
+Resolution/Remarks
+
+Do not assume values without checking the old system.
+
+============================================================
+32. EVENTS
+============================================================
+
+Migrate the complete Events module if present.
+
+Preserve:
+
+- event category
+- venue
+- location
+- document
+- from time
+- to time
+- status
+- organizer
+- coordinator
+- reports
+
+Use the actual old implementation as the source of truth.
+
+============================================================
+33. CAMPAIGN / WHATSAPP
+============================================================
+
+This is a critical existing integration.
+
+Find the existing WhatsApp API implementation.
+
+Reuse the existing business logic where appropriate.
+
+Do NOT create duplicate WhatsApp implementations.
+
+Move credentials to backend environment variables.
+
+Never expose API keys to React.
+
+The React frontend must communicate with FastAPI.
+
+FastAPI communicates with WhatsApp provider.
+
+Architecture:
+
+React
+  ↓
+FastAPI
+  ↓
+WhatsApp API
+
+Preserve:
+
+- phone normalization
+- template handling
+- campaign records
+- confirmed filtering
+- success/failure handling
+- logs
+- delivery statuses
+- campaign history
+
+============================================================
+34. REPORTS
+============================================================
+
+Migrate ALL existing reports.
+
+Reports must use PostgreSQL data.
+
+Preserve:
+
+- filters
+- date ranges
+- search
+- sorting
+- grouping
+- totals
+- calculations
+- pagination
+- export
+
+Where the old system supports:
+
+PDF
+Excel
+CSV
+
+provide equivalent functionality.
+
+Do not create static reports.
+
+============================================================
+35. FILE UPLOADS
+============================================================
+
+Find every file upload in the old system.
+
+Document:
+
+- file types
+- file size
+- storage
+- naming
+- database references
+
+Implement secure FastAPI file uploads.
+
+Validate:
+
+- extension
+- MIME type
+- size
+- filename
+
+Do not trust user-provided filenames.
+
+============================================================
+36. ENVIRONMENT VARIABLES
+============================================================
+
+Create:
+
+backend/.env.example
+
+Example:
+
+DATABASE_URL=
+SECRET_KEY=
+JWT_SECRET_KEY=
+
+WHATSAPP_API_URL=
+WHATSAPP_LICENSE_NUMBER=
+WHATSAPP_API_KEY=
+
+Other secrets found in the old system must also be moved to
+environment variables.
+
+NEVER hard-code secrets.
+
+NEVER put backend secrets into React.
+
+============================================================
+37. CORS
+============================================================
+
+Configure FastAPI CORS correctly for local development.
+
+The React frontend and FastAPI backend will run on different
+ports during development.
+
+Do not use allow_origins=["*"] in the final production
+configuration unless there is a documented reason.
+
+============================================================
+38. API DOCUMENTATION
+============================================================
+
+FastAPI Swagger must work:
+
+/docs
+
+ReDoc must work:
+
+/redoc
+
+All important APIs should have:
+
+- summary
+- description
+- request schema
+- response schema
+- error responses
+
+============================================================
+39. TESTING
+============================================================
+
+Do not consider a module complete just because its page loads.
+
+Test:
+
+Backend:
+- authentication
+- authorization
+- CRUD
+- validation
+- calculations
+- reports
+- database operations
+- integrations
+
+Frontend:
+- routing
+- login
+- forms
+- validation
+- tables
+- filters
+- pagination
+- important workflows
+
+Database:
+- relationships
+- constraints
+- indexes
+- calculations
+
+============================================================
+40. OLD VS NEW VALIDATION
+============================================================
+
+This is extremely important.
+
+For each major module compare:
+
+OLD SYSTEM
+vs
+NEW SYSTEM
+
+Compare:
+
+- dashboard counts
+- student counts
+- course counts
+- enrollment counts
+- payment totals
+- pending fees
+- attendance totals
+- course progress
+- report totals
+- campaign counts
+
+If values differ:
+
+DO NOT simply modify the new code until the values match.
+
+First find the old business logic.
+
+Determine the reason for the difference.
+
+Then implement the correct equivalent logic.
+
+Document the correction.
+
+============================================================
+41. PERFORMANCE
+============================================================
+
+The ERP may have multiple users working concurrently.
+
+Design APIs and database queries properly.
+
+Use:
+
+- pagination
+- indexes
+- efficient queries
+- proper joins
+- connection pooling
+- selective fields
+- appropriate caching only where useful
+
+Do not load thousands of records into React unnecessarily.
+
+============================================================
+42. SECURITY
+============================================================
+
+Implement:
+
+- secure password hashing
+- authentication
+- authorization
+- CORS
+- environment variables
+- SQL injection protection
+- Pydantic validation
+- file upload validation
+- proper exception handling
+- safe API responses
+
+Never expose:
+
+- passwords
+- API keys
+- secret tokens
+- database credentials
+
+============================================================
+43. NO FAKE / DEMO IMPLEMENTATION
+============================================================
+
+I DO NOT WANT:
+
+- dummy dashboard
+- fake statistics
+- hard-coded students
+- fake payments
+- placeholder CRUD
+- static tables
+- fake charts
+- fake APIs
+- "Coming Soon" pages
+- incomplete navigation pretending to be complete
+
+I need a REAL migration.
+
+If something cannot yet be migrated, clearly mark it as:
+
+NOT MIGRATED
+
+Do not pretend that it is complete.
+
+============================================================
+44. DO NOT CHANGE OLD APPLICATION
+============================================================
+
+NEVER modify:
+
+http://localhost/priya/adminv1/
+
+NEVER modify the old MySQL database.
+
+The old application must remain available for comparison.
+
+============================================================
+45. IMPLEMENTATION PHASES
+============================================================
+
+Follow these phases strictly.
+
+PHASE 1
+---------
+Analyze old application.
+
+PHASE 2
+---------
+Analyze old database.
+
+PHASE 3
+---------
+Create migration_plan.md.
+
+PHASE 4
+---------
+Create PostgreSQL schema/models.
+
+PHASE 5
+---------
+Create Alembic migrations.
+
+PHASE 6
+---------
+Create MySQL → PostgreSQL migration utility.
+
+PHASE 7
+---------
+Create FastAPI backend foundation.
+
+PHASE 8
+---------
+Implement authentication and authorization.
+
+PHASE 9
+---------
+Implement core APIs.
+
+PHASE 10
+---------
+Create fresh React + Vite frontend.
+
+PHASE 11
+---------
+Create layouts and navigation.
+
+PHASE 12
+---------
+Migrate modules one by one.
+
+PHASE 13
+---------
+Migrate reports.
+
+PHASE 14
+---------
+Migrate external integrations.
+
+PHASE 15
+---------
+Testing.
+
+PHASE 16
+---------
+Old vs New comparison.
+
+PHASE 17
+---------
+Fix errors.
+
+PHASE 18
+---------
+Final verification.
+
+============================================================
+46. DO NOT TRY TO MIGRATE EVERYTHING BLINDLY IN ONE STEP
+============================================================
+
+Work systematically.
+
+After analyzing the old application, divide it into modules.
+
+For each module:
+
+1. Understand old code.
+2. Understand database.
+3. Identify business rules.
+4. Create PostgreSQL model.
+5. Create FastAPI API.
+6. Test API.
+7. Create React page.
+8. Connect React to API.
+9. Test UI.
+10. Compare with old application.
+11. Mark module completed.
+
+Then continue to the next module.
+
+============================================================
+47. LOCAL DEVELOPMENT
+============================================================
+
+Frontend should run approximately as:
+
+cd D:\React_OfficeProject\admin-portal\react-admin-portal\frontend
+
+npm install
+
+npm run dev
+
+Backend should run approximately as:
+
+cd D:\React_OfficeProject\admin-portal\react-admin-portal\backend
+
+Create Python virtual environment.
+
+Install requirements.
+
+Run:
+
+uvicorn app.main:app --reload
+
+Use the actual generated project structure if the command needs
+minor adjustment.
+
+Document the exact commands in README.md.
+
+============================================================
+48. FINAL README
+============================================================
+
+Create a complete README.md containing:
+
+- Project overview
+- Architecture
+- Requirements
+- Node version
+- Python version
+- PostgreSQL setup
+- Environment variables
+- Frontend installation
+- Backend installation
+- Database setup
+- Alembic commands
+- MySQL → PostgreSQL migration
+- Running frontend
+- Running backend
+- API documentation
+- Testing
+- Production build
+- Important notes
+
+============================================================
+49. FINAL VERIFICATION
+============================================================
+
+Before saying the migration is complete:
+
+1. Start PostgreSQL.
+2. Start FastAPI.
+3. Verify database connection.
+4. Open /docs.
+5. Start React.
+6. Open the React application.
+7. Test login.
+8. Test navigation.
+9. Test major CRUD operations.
+10. Test reports.
+11. Test important calculations.
+12. Test authentication.
+13. Check browser console.
+14. Check FastAPI logs.
+15. Check PostgreSQL errors.
+16. Compare important results with old application.
+17. Fix all discovered errors.
+
+============================================================
+50. FINAL DELIVERABLE
+============================================================
+
+The final project must exist at:
+
+D:\React_OfficeProject\admin-portal\react-admin-portal
+
+It must contain:
+
+- React frontend
+- Vite configuration
+- FastAPI backend
+- PostgreSQL database configuration
+- SQLAlchemy models
+- Alembic migrations
+- MySQL → PostgreSQL migration utility
+- REST APIs
+- Authentication
+- Authorization
+- React routes
+- React components
+- All migrated modules
+- Reports
+- Integrations
+- Tests
+- README.md
+- migration_plan.md
+- migration_checklist.md
+
+============================================================
+MOST IMPORTANT RULES
+============================================================
+
+1. DO NOT modify the old PHP application.
+
+2. DO NOT modify the old MySQL database.
+
+3. DO NOT use Create React App for the new project.
+
+4. Use React + JavaScript + React Router + Axios + CSS.
+
+5. Use Vite only as the React development/build tool.
+
+6. Use Python + FastAPI for backend APIs.
+
+7. Use Pydantic for API validation.
+
+8. Use SQLAlchemy 2.x for database interaction.
+
+9. Use Alembic for PostgreSQL schema migrations.
+
+10. Use PostgreSQL as the new database.
+
+11. Do not expose backend secrets to React.
+
+12. Do not copy jQuery logic directly into React.
+
+13. Do not create fake data.
+
+14. Do not create placeholder modules.
+
+15. Do not invent business rules.
+
+16. Read the old PHP/SQL implementation before recreating
+    business logic.
+
+17. Preserve existing calculations.
+
+18. Preserve existing workflows.
+
+19. Preserve existing permissions.
+
+20. Compare old and new results.
+
+21. Test every migrated module.
+
+22. Keep frontend and backend cleanly separated.
+
+23. Do not consider the migration complete until the actual
+    functionality has been tested.
+
+START NOW WITH PHASE 1:
+
+ANALYZE THE OLD APPLICATION AND DATABASE.
+
+Do NOT begin by creating random React pages.
+
+First create:
+
+migration_plan.md
+
+and document the complete migration architecture and module
+mapping.
+
+After the analysis is complete, proceed systematically through
+the migration phases.
+
+give full db creation in db.txt file. 
+i want the ui like index.html in  this folder. ui alone refer that. 
